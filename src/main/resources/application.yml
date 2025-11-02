@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: maersk-booking-service
+
+  data:
+    mongodb:
+      host: ${SPRING_DATA_MONGODB_HOST:localhost}
+      port: ${SPRING_DATA_MONGODB_PORT:27017}
+      database: ${SPRING_DATA_MONGODB_DATABASE:maersk_booking_db}
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.example.maersk: DEBUG

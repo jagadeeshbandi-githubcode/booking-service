@@ -1,0 +1,21 @@
+openapi: 3.0.1
+info:
+  title: Maersk Container Booking API
+  version: 1.0.0
+paths:
+  /api/bookings/check-availability:
+    post:
+      summary: Check availability
+      requestBody:
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/bookings/create:
+    post:
+      summary: Create booking
+      requestBody:
+        required: true
+      responses:
+        '200':
+          description: Created

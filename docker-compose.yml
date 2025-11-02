@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  mongo:
+    image: mongo:6
+    container_name: maersk-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - maersk-mongo-data:/data/db
+
+  app:
+    build: .
+    depends_on:
+      - mongo
+    environment:
+      - SPRING_DATA_MONGODB_HOST=mongo
+      - SPRING_DATA_MONGODB_PORT=27017
+      - SPRING_DATA_MONGODB_DATABASE=maersk_booking_db
+    ports:
+      - "8080:8080"
+
+volumes:
+  maersk-mongo-data:
